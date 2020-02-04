@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion 8
+    consumerProguardFiles 'release-proguard.cfg'
+    versionCode 1
+    versionName ""
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+dependencies {
+  compileOnly 'com.squareup.picasso:picasso:2.5.2'
+  compileOnly 'com.android.support:support-annotations:28.0.0'
+}
