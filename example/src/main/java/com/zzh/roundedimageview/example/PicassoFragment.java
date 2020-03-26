@@ -78,7 +78,7 @@ public class PicassoFragment extends Fragment {
 
             PicassoItem item = getItem(position);
 
-            ImageView imageView = ((ImageView) view.findViewById(R.id.imageView1));
+            ImageView imageView = (view.findViewById(R.id.imageView1));
             imageView.setScaleType(item.mScaleType);
 
 
@@ -88,7 +88,7 @@ public class PicassoFragment extends Fragment {
                     .cornerRadiusDp(30)
                     .oval(false)
                     .build();
-            Picasso.with(getContext())
+            Picasso.get()
                     .load(item.mUrl)
                     .fit()
                     .transform(transformation)

@@ -17,7 +17,6 @@ public class ExampleActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.example_activity);
-
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     Spinner navSpinner = (Spinner) findViewById(R.id.spinner_nav);
 
@@ -60,6 +59,10 @@ public class ExampleActivity extends AppCompatActivity
       case 5:
         // background
         newFragment = RoundedFragment.getInstance(RoundedFragment.ExampleType.BACKGROUND);
+        break;
+      case 6:
+        // background
+        newFragment = new GlideFragment();
         break;
     }
 

@@ -8,7 +8,7 @@ android {
     minSdkVersion 8
     consumerProguardFiles 'release-proguard.cfg'
     versionCode 1
-    versionName ""
+    versionName "1.0.0"
   }
 
   compileOptions {
@@ -18,6 +18,6 @@ android {
 }
 
 dependencies {
-  compileOnly 'com.squareup.picasso:picasso:2.5.2'
-  compileOnly 'com.android.support:support-annotations:28.0.0'
+  releaseImplementation 'com.squareup.picasso:picasso:2.71828'
+  releaseImplementation 'com.android.support:support-annotations:28.0.0'
 }
