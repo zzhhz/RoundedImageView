@@ -16,14 +16,14 @@ import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.ImageView.ScaleType;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.lang.Throwable;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 
 @SuppressWarnings("UnusedDeclaration")
 public class RoundedDrawable extends Drawable {
