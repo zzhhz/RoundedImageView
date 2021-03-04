@@ -88,17 +88,23 @@ public class RoundedDrawable extends Drawable {
                 // just return if it's already a RoundedDrawable
                 return drawable;
             } else if (drawable instanceof LayerDrawable) {
-                ConstantState cs = drawable.mutate().getConstantState();
-                LayerDrawable ld = (LayerDrawable) (cs != null ? cs.newDrawable() : drawable);
+                Drawable mutate = drawable.mutate();
+                if (mutate != null) {
+                    ConstantState cs = mutate.getConstantState();
+                    if (cs != null) {
+                        LayerDrawable ld = (LayerDrawable) (cs != null ? cs.newDrawable() : drawable);
+                        if (ld != null) {
+                            int num = ld.getNumberOfLayers();
 
-                int num = ld.getNumberOfLayers();
-
-                // loop through layers to and change to RoundedDrawables if possible
-                for (int i = 0; i < num; i++) {
-                    Drawable d = ld.getDrawable(i);
-                    ld.setDrawableByLayerId(ld.getId(i), fromDrawable(d));
+                            // loop through layers to and change to RoundedDrawables if possible
+                            for (int i = 0; i < num; i++) {
+                                Drawable d = ld.getDrawable(i);
+                                ld.setDrawableByLayerId(ld.getId(i), fromDrawable(d));
+                            }
+                            return ld;
+                        }
+                    }
                 }
-                return ld;
             }
 
             // try to get a bitmap from the drawable and
